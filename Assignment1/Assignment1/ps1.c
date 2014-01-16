@@ -170,6 +170,13 @@ double x_cubed(double x){
 
 // Computes the definite integral of the function using the rectangle method
 double integrate(double (*function)(double), double start, double end, double stepsize){
+	double result = 0.0;
+	for (double i = start; i<end; i+=stepsize){
+		result += (*function)(i);
+	}
+	result *= stepsize;
+	return result;
+	
 }
 
 
